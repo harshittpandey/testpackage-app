@@ -20,7 +20,7 @@
     </div>
     <div id="result">
       <h3> {{final_res}}</h3>
-      <router-link :to="{name: 'DemoTest'}">Go to Demo Test</router-link>
+      <router-link :to="{name: 'DemoTest'}">Go to Demo</router-link>
     </div>
   </div>
 </template>
