@@ -87,7 +87,7 @@ export default {
     checkScore: function () {
       let ans= this.myJson[this.curr_ques_index].answer;
       if(this.picked){
-        if(this.picked === ans) {
+        if(this.picked == ans) {
           this.final_res= this.final_res+1;
         }
         else {
@@ -100,6 +100,7 @@ export default {
         this.checkScore();
         this.curr_ques_index++;
         if (this.myJson.length- this.curr_ques_index== 1) {
+          this.curr_ques=this.myJson[this.curr_ques_index];
           document.getElementById('submit_button').style.display= 'block';
           document.getElementById('next_button').style.display= 'none';
         }
