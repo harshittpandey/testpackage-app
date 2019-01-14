@@ -2,41 +2,49 @@
 		{
 			"description": "<p>Which of the phrase given below should replace the <mark>highlighted</mark> phrase to make the sentence grammatically correct?</p> <p>I have got some tea, but I do not have <mark>a</mark> sugar.</p>",
 			"options": ["some", "got", "more", "any", "No correction required"],
-			"answer": "any"
+			"answer": "any",
+			"is_reading_passage": "0"
 		},
 		{
 			"description": "<p>In the question given below, a part of the sentence is <mark>highlighted</mark>. Below are given alternatives to the italicised part which may improve the sentence. Choose the correct alternative.</p><p><mark>If the room had been brighter</mark>, I would have been able to read for a while before bed time.</p>",
 			"options": ["If the room was brighter", "If the room are brighter", "Had the room been brighter", "No improvement"],
-			"answer": "Had the room been brighter"
+			"answer": "Had the room been brighter",
+			"is_reading_passage": "0"
 		},
 		{
 			"description": "<p>Choose the one word which can be substituted for this sentence.</p><p>A person of good understanding knowledge and reasoning power</p>",
 			"options": ["Expert", "Intellectual", "Snob", "Literate"],
-			"answer": "Intellectual"
+			"answer": "Intellectual",
+			"is_reading_passage": "0"
 		},
 		{
 			"description": "<p>Pick out the most effective word from the given words to fill in the blank to make the sentence meaningfully complete.</p><p>Success in this examination depends ...... hard work alone.</p>",
 			"options": ["at", "over", "for", "on"],
-			"answer": "on"
+			"answer": "on",
+			"is_reading_passage": "0"
 		},
 		{
 			"description": "<p><b>Reading Comprehension</b></p><p> What needs to be set right is our approach to work. It is a common sight in our country of employees reporting for duty on time and at the same time doing little work. If an assessment is made of time they spent in gossiping, drinking tea and smoking cigarettes, it will be shocking to know that the time devoted to actual work is negligible. The problem is the standard which the leadership in administration sets for the staff. Forgot the ministers because they mix politics and administration. What do top bureaucrats do? What do the below down officials do? The administration set up remains week mainly because the employees do not have the right example to follow and they are more concerned about being in the good books of the bosses than doing work.</p><p><b>Question</b>:</p><p>The employees in our country</p>",
 			"options": ["are quite punctual but not duty conscious", "are not punctual, but somehow manage to complete their work", "are somewhat lazy but good natured", "are not very highly qualified"],
-			"answer": "are quite punctual but not duty conscious"
+			"answer": "are quite punctual but not duty conscious",
+			"is_reading_passage": "1"
 		},
 		{
 			"description": "<p><b>Reading Comprehension</b></p><p> What needs to be set right is our approach to work. It is a common sight in our country of employees reporting for duty on time and at the same time doing little work. If an assessment is made of time they spent in gossiping, drinking tea and smoking cigarettes, it will be shocking to know that the time devoted to actual work is negligible. The problem is the standard which the leadership in administration sets for the staff. Forgot the ministers because they mix politics and administration. What do top bureaucrats do? What do the below down officials do? The administration set up remains week mainly because the employees do not have the right example to follow and they are more concerned about being in the good books of the bosses than doing work.</p><p><b>Question</b>:</p><p>According to the writer, the administration in India</p>",
 			"options": ["is by and large effective", "is very strict and firm", "is affected by red tape", "is more or less ineffective"],
-			"answer": "is more or less ineffective"
+			"answer": "is more or less ineffective",
+			"is_reading_passage": "1"
 		},
 		{
 			"description": "<p><b>Reading Comprehension</b></p><p> What needs to be set right is our approach to work. It is a common sight in our country of employees reporting for duty on time and at the same time doing little work. If an assessment is made of time they spent in gossiping, drinking tea and smoking cigarettes, it will be shocking to know that the time devoted to actual work is negligible. The problem is the standard which the leadership in administration sets for the staff. Forgot the ministers because they mix politics and administration. What do top bureaucrats do? What do the below down officials do? The administration set up remains week mainly because the employees do not have the right example to follow and they are more concerned about being in the good books of the bosses than doing work.</p><p><b>Question</b>:</p><p>The leadership in administration</p>",
 			"options": ["sets a fine example to the employees", "is of a reasonably high standard", "is composed of idealists", "is of a very poor standard"],
-			"answer": "is of a very poor standard"
+			"answer": "is of a very poor standard",
+			"is_reading_passage": "1"
 		},
 		{
 			"description": "<p><b>Reading Comprehension</b></p><p> What needs to be set right is our approach to work. It is a common sight in our country of employees reporting for duty on time and at the same time doing little work. If an assessment is made of time they spent in gossiping, drinking tea and smoking cigarettes, it will be shocking to know that the time devoted to actual work is negligible. The problem is the standard which the leadership in administration sets for the staff. Forgot the ministers because they mix politics and administration. What do top bureaucrats do? What do the below down officials do? The administration set up remains week mainly because the employees do not have the right example to follow and they are more concerned about being in the good books of the bosses than doing work.</p><p><b>Question</b>:</p><p>The central idea of passage could be best expressed by the following</p>",
 			"options": ["The employee outlook towards work is justified", "The employee must change their outlook towards work", "The employees would never change their work culture", "The employer-employee relationship is far from healthy"],
-			"answer": "The employee must change their outlook towards work"
+			"answer": "The employee must change their outlook towards work",
+			"is_reading_passage": "1"
 		}
 	]

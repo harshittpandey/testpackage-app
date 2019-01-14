@@ -2,25 +2,49 @@
   <div class="verbalAndReadingComprehension">
     <h4 style="text-align: center">Verbal and Reading Comprehension Test</h4>
     <div id="test">
-      <div id="timer">
-        <span id="minutes">{{minutes}}</span>
+      <div id="timer" class="timer">
+        <span id="minutes"><strong>{{minutes}}</strong></span>
         <span id="middle">:</span>
-        <span id="seconds">{{seconds}}</span>
+        <span id="seconds"><strong>{{seconds}}</strong></span>
       </div>
-      <div >
-        <h4>Question {{curr_ques_index+1}}: </h4>
-        <p v-html="curr_ques.description"></p>
-        <div class="buttons" v-for="option in curr_ques.options">
-          <input type="radio" id="one" :value="option" v-model="picked">
-          <label for="one">{{option}}</label>
+      <div>
+        <div  v-if="curr_ques.is_reading_passage == '0'">
+          <h4 style="padding-left: 35px;"> <u> Question <strong>{{curr_ques_index+1}}  </strong>: </u></h4>
+          <p  v-html="curr_ques.description" style="padding-left: 35px;"></p>
+          <div class="buttons" v-for="option in curr_ques.options" style="">
+            <label class="container"  >{{option}}
+              <input type="radio" :value="option" v-model="picked">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+
+        <div v-else class="row">
+          <div class="col-sm-6">
+            <h4 style="padding-left: 35px;"> <u> Question <strong>{{curr_ques_index+1}}  </strong>: </u></h4>
+            <p  v-html="curr_ques.description" style="padding-left: 35px;"></p>            
+          </div>
+          <div class="col-sm-5">
+            <div class="buttons" style="margin-top: 2em" v-for="option in curr_ques.options">
+              <label class="container" >{{option}}
+                <input type="radio" :value="option" v-model="picked">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
         </div>
       </div>
-      <button id="next_button" @click="nextQuestion">Next</button>
-      <button id="submit_button" @click="onSubmit">Submit</button>
+      <div class="nav_buttons">
+        <button id="next_button" @click="nextQuestion">Next</button>
+        <button id="submit_button" @click="onSubmit">Submit</button>
+      </div>
     </div>
-    <div id="result">
-      <h3> {{final_res}}</h3>
-      <router-link :to="{name: 'DemoTest'}">Go to Demo</router-link>
+    <div id="result" style="margin-top: 5em">
+      <h1 style="text-align: center">Your Score</h1>
+      <h1 style="font-size: 100px; text-align: center"> {{final_res}}</h1>
+      <div style="background-color: #588BAE;color:#eee;padding: 10px;width: 200px; text-align: center; cursor: pointer;">
+        <router-link :to="{name: 'DemoTest'}" style="color: inherit;text-decoration: none">Go to Demo</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -35,7 +59,7 @@ export default {
     return{
       myJson: json,
       timer: null,
-      totalTime: (1 * 10),
+      totalTime: (10 * 60),
       curr_ques_index: 0,
       curr_ques: {},
       curr_res:0,
@@ -52,7 +76,7 @@ export default {
       this.resetButton = true;
     },
     resetTimer: function() {
-      this.totalTime = (1 * 10);
+      this.totalTime = (10 * 60);
       clearInterval(this.timer);
       this.timer = null;
       this.resetButton = false;
@@ -73,23 +97,23 @@ export default {
       this.picked=''; 
     },
     nextQuestion: function() {
-        this.resetTimer();
         this.checkScore();
         this.curr_ques_index++;
         if (this.myJson.length- this.curr_ques_index== 1) {
           document.getElementById('submit_button').style.display= 'block';
           document.getElementById('next_button').style.display= 'none';
-          this.startTimer()  
         }
         else {
           this.curr_ques=this.myJson[this.curr_ques_index];
-          this.startTimer()  
         }
     },
     countdown: function() {
       this.totalTime--;
+      if (this.totalTime==10) {
+        document.getElementById('timer').style.color="red"
+      }
       if(this.totalTime==0) {
-        this.nextQuestion()
+        this.onSubmit()
       }
     },
     onSubmit: function () {
@@ -130,5 +154,88 @@ export default {
 }
 mark {
   background-color: yellow!important
+}
+
+.timer {
+  text-align: center;
+  font-size: 40px
+}
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  background-color: #eee;
+  border-radius: 10%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 0px;
+  left: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 10%;
+  background: #4682B4;
+}
+
+.nav_buttons {
+  position: fixed;
+  right: 10%;
+  bottom: 5%
+}
+
+.nav_buttons button {
+  padding: 10px!important;
+  background-color: #588BAE;
+  border: 0px;
+  cursor: pointer;
+  width: 200px
 }
 </style>
