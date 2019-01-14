@@ -1,5 +1,5 @@
-# app
-
+# Student Application
+A simple quiz application with a set of verbal and communication questions.
 ## Project setup
 ```
 npm install
@@ -9,21 +9,12 @@ npm install
 ```
 npm run serve
 ```
+Screenshots of the current application.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+![first ss](https://github.com/harshittpandey/testpackage-app/blob/master/public/one_ss.png)
 
-### Run your tests
-```
-npm run test
-```
+![second ss](https://github.com/harshittpandey/testpackage-app/blob/master/public/tqo_ss.png)
 
-### Lints and fixes files
-```
-npm run lint
-```
+![third ss](https://github.com/harshittpandey/testpackage-app/blob/master/public/three.png)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![four ss](https://github.com/harshittpandey/testpackage-app/blob/master/public/four.png)
